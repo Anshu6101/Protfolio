@@ -1189,7 +1189,16 @@ pre code {
     flex: 0 0 25%;
     max-width: 25%;
   }
+
+  .col-md-4:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    overflow: visible; /* Ensure scaling works without clipping */
+  }
+
   .col-md-4 {
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+
     -webkit-box-flex: 0;
     -ms-flex: 0 0 33.33333%;
     flex: 0 0 33.33333%;
@@ -10287,8 +10296,11 @@ h5,
 }
 
 .blog-entry {
-  margin-bottom: 6em;
+  margin: 15px;
+  margin-bottom: 60px; 
+  /* margin-bottom: 6em; */
 }
+
 .blog-entry .img {
   display: block;
   height: 400px;
