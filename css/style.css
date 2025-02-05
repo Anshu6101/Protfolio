@@ -6484,7 +6484,7 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #ffffff !important;
 }
 
 a.bg-light:hover,
@@ -10297,7 +10297,7 @@ h5,
 
 .blog-entry {
   margin: 15px;
-  margin-bottom: 60px; 
+  margin-bottom: 60px;
   /* margin-bottom: 6em; */
 }
 
@@ -11107,5 +11107,76 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
+  }
+}
+
+/* Logo Slider Container */
+.logo-slider {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  padding: 15px 0; /* More padding for better spacing */
+}
+
+/* Logo Slider Track */
+.logo-slider-track {
+  display: flex; /* Use flexbox for alignment */
+  gap: 120px; /* Adjust space between logos */
+  animation: scroll 15s linear infinite; /* Default scroll speed */
+}
+
+/* Logo Slide */
+.logo-slide {
+  flex: 0 0 auto; /* Prevents shrinking */
+}
+
+/* Logo Image */
+.logo-slide img {
+  width: 120px; /* Increase size for HD appearance */
+  max-width: 100%; /* Ensure responsiveness */
+  height: auto; /* Maintain aspect ratio */
+  filter: drop-shadow(
+    2px 2px 5px rgba(0, 0, 0, 0.2)
+  ); /* Add slight shadow for better visibility */
+}
+
+/* Keyframes for Infinite Scroll */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%); /* Move entire width of track */
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .logo-slider-track {
+    gap: 100px; /* Reduce gap for smaller screens */
+    animation: scroll 12s linear infinite; /* Slightly faster */
+  }
+}
+
+@media (max-width: 768px) {
+  .logo-slider-track {
+    gap: 80px; /* Reduce gap further */
+    animation: scroll 10s linear infinite; /* Increase speed */
+  }
+
+  .logo-slide img {
+    width: 90px; /* Smaller logos on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-slider-track {
+    gap: 60px; /* Adjust gap for very small screens */
+    animation: scroll 8s linear infinite; /* Faster scrolling */
+  }
+
+  .logo-slide img {
+    width: 80px; /* Reduce size on very small screens */
   }
 }
