@@ -146,6 +146,30 @@ AOS.init({
   };
   contentWayPoint();
 
+
+  // Show More Button Logic ------> 
+  var setupProjectToggle = function() {
+    const toggleBtn = document.getElementById("toggleBtn");
+    const hiddenProjects = document.querySelectorAll(".project.hidden");
+  
+    let isExpanded = false;
+  
+    toggleBtn.addEventListener("click", function() {
+      hiddenProjects.forEach(function(project) {
+        project.style.display = isExpanded ? "none" : "block";
+      });
+  
+      toggleBtn.textContent = isExpanded ? "Show More" : "Show Less";
+      isExpanded = !isExpanded;
+    });
+  };
+  
+  // Call the function after DOM is ready
+  document.addEventListener("DOMContentLoaded", setupProjectToggle);
+  
+
+
+
   // magnific popup
   $(".image-popup").magnificPopup({
     type: "image",

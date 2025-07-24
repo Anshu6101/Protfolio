@@ -11110,6 +11110,16 @@ textarea.form-control {
   }
 }
 
+
+
+
+
+
+
+
+
+
+/* ----------------------------------- L O G O___S L I D E R ---------------------------------- */
 /* Logo Slider Container */
 .logo-slider {
   overflow: hidden;
@@ -11119,11 +11129,12 @@ textarea.form-control {
   padding: 15px 0; /* More padding for better spacing */
 }
 
-/* Logo Slider Track */
+/* Logo Slider Track - Modified for Infinite Loop */
 .logo-slider-track {
-  display: flex; /* Use flexbox for alignment */
+  display: flex;
   gap: 120px; /* Adjust space between logos */
-  animation: scroll 15s linear infinite; /* Default scroll speed */
+  animation: scroll 15s linear infinite;
+  width: max-content; /* Ensures smooth infinite scrolling */
 }
 
 /* Logo Slide */
@@ -11141,13 +11152,13 @@ textarea.form-control {
   ); /* Add slight shadow for better visibility */
 }
 
-/* Keyframes for Infinite Scroll */
+/* Keyframes for Infinite Scroll - Fixed */
 @keyframes scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%); /* Move entire width of track */
+    transform: translateX(-50%); /* Moves half of the duplicated track */
   }
 }
 
@@ -11180,3 +11191,4 @@ textarea.form-control {
     width: 80px; /* Reduce size on very small screens */
   }
 }
+
